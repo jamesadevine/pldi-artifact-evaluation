@@ -119,4 +119,15 @@ For all four parts above, there are optional steps to repeat the steps to build 
 
 
 ## 5. OPTIONAL: inspect sources of various Figures in paper
-   - Figure 
+   - Figure 2
+      - https://microsoft.github.io/jacdac-docs/services/accelerometer/
+      - https://github.com/microsoft/jacdac/blob/main/services/accelerometer.md
+   - Figure 6
+      - https://microsoft.github.io/jacdac-docs/services/distance/
+      - https://github.com/microsoft/jacdac/blob/main/services/distance.md
+   - Figure 7
+      - https://microsoft.github.io/jacdac-docs/services/led/
+      - https://github.com/microsoft/jacdac/blob/main/services/led.md
+   - Figure 8
+      - https://github.com/microsoft/jacdac-c/blob/main/inc/jd_physical.h
+   - 
