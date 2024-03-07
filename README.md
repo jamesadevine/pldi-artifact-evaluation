@@ -54,14 +54,16 @@ We have flashed the micro:bit you have received with the "microbit-jukebox" app,
 
 ## Evaluation overview
 
-The evaluation consists of four parts:
+The evaluation consists of five parts:
    1. Work with pre-programmed micro:bit and Jacdac hardware
    2. Work with the Jacdac web site
    3. Deploy and work with "nite lite" exampe from paper (HW and SW)
    4. Check the automatically generate stats that go into Table 1 and 2.
    5. OPTIONAL: examine full sources of various figures in the table
 
-For all four parts above, there are optional steps to repeat the steps to build artifacts from sources, if desired. The "nite lite" example uses the following hardware components from above:
+For all parts above, there are optional steps to repeat the steps to build artifacts from sources, if desired. 
+
+The "nite lite" example uses the following hardware components from above:
  - micro:bit V2
  - Jacdaptor
  - battery pack (optional, as power can be supplied over USB as well)
@@ -130,4 +132,3 @@ For all four parts above, there are optional steps to repeat the steps to build 
       - https://github.com/microsoft/jacdac/blob/main/services/led.md
    - Figure 8
       - https://github.com/microsoft/jacdac-c/blob/main/inc/jd_physical.h
-   - 
