@@ -2,7 +2,7 @@
 
 A Docker image and DockerFile are provided, which automate the steps of building the artifacts mentioned below. To make most efficient use of time, we suggest using the artifacts that were automatically built from the sources (both artifacts and sources included in the Docker image). Of course, the evaluators may want to build from sources themselves.
 
-## Docker operations 
+## Docker operations
 
 - may require sudo on linux
 - ctrl + d to exit
@@ -10,7 +10,7 @@ A Docker image and DockerFile are provided, which automate the steps of building
 ```
 docker build -t pldi_ae_container .
 
-docker run -id --name=pldi-ae -t pldi_container:latest
+docker run -id --name=pldi-ae -t pldi_ae_container:latest
 
 docker cp pldi-ae:/artifacts ./artifacts
 
@@ -36,7 +36,7 @@ You should have received the following hardware to perform the evaluation:
       - a micro:bit V2
       - battery pack
       - micro-USB cable (for connecting micro:bit to PC)
-      
+
    2. KittenBot Kit A with micro:bit Jacdaptor (https://www.kittenbot.cc/products/kittenbot-jacdac-kit-for-micro-bit), which includes
       - Jacdac cables
       - 1 micro:bit Jacdaptor (a bridge between micro:bit and Jacdac bus)
@@ -61,7 +61,7 @@ The evaluation consists of five parts:
    4. Check the automatically generate stats that go into Table 1 and 2.
    5. OPTIONAL: examine full sources of various figures in the table
 
-For all parts above, there are optional steps to repeat the steps to build artifacts from sources, if desired. 
+For all parts above, there are optional steps to repeat the steps to build artifacts from sources, if desired.
 
 The "night light" example uses the following hardware components from above:
  - micro:bit V2
@@ -78,11 +78,11 @@ The "night light" example uses the following hardware components from above:
    - Power micro:bit via battery pack, plugged into JST port on the micro:bit
    - Plug the micro:bit into jacdac adaptor, make sure the small switch in the middle of the jacdac adaptor is in jacdac (lower) position, providing power to Jacdac bus from micro:bit
    - Attach keycap button module via cable to adaptor, see count go up, micro:bit screen react
-   - Try another button 
+   - Try another button
    - Try other modules, like slider, light sensor, etc.
    - Try removing something from Jacdac bus, see count go down
    - See https://microsoft.github.io/jacdac-docs/start/ for videos and more information about the microbit-jukebox app.
-   - OPTIONAL: Build the microbit-jukebox app from sources using the MakeCode CLI and copy over USB to micro:bit. 
+   - OPTIONAL: Build the microbit-jukebox app from sources using the MakeCode CLI and copy over USB to micro:bit.
       - The built app is already available in **artifacts/XYZ**
 
 ## 2. Work with the Jacdac web site
@@ -96,7 +96,7 @@ The "night light" example uses the following hardware components from above:
        - yarn develop (need to wait a bit until tty output stops)
        - navigate to http://localhost:8000/
        - see the same as before in (3)
-    
+
 ## 3. Deploy and work with the "night light" example
    - Configure the hardware as shown in Figure 1(b); note that the order of the four modules is not important:
      - accelerometer module
