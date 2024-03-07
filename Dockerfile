@@ -6,7 +6,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt install -y git wget curl build-essential libdbus-glib-1-dev libgirepository1.0-dev cmake udev net-tools python2
 
 ADD scripts/install-gcc-arm-none-eabi.sh /install-gcc-arm-none-eabi.sh
-RUN bash install-gcc-arm-none-eabi.sh
+RUN /install-gcc-arm-none-eabi.sh
 
 ENV NODE_VERSION=14.17.0
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
