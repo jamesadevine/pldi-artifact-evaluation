@@ -83,7 +83,9 @@ The "night light" example uses the following hardware components from above:
    - Try removing something from Jacdac bus, see count go down
    - See https://microsoft.github.io/jacdac-docs/start/ for videos and more information about the microbit-jukebox app.
    - OPTIONAL: Build the microbit-jukebox app from sources using the MakeCode CLI and copy over USB to micro:bit.
-      - The built app is already available in **artifacts/XYZ**
+      - The built app (hex file to be copied to micro:bit) is available in **artifacts/microbit-jukebox.hex**
+      - to build yourself, see DockerImage, lines TODO
+   
 
 ## 2. Work with the Jacdac web site
    - Open https://aka.ms/jacdac
@@ -92,7 +94,8 @@ The "night light" example uses the following hardware components from above:
    - see that changes to hardware state are reflected in the digital twins
    - open device tree view (from wrench on upper left) and inspect devices and services on the Jacdac bus
    -  OPTIONAL: Build the Jacdac web site from sources and host locally
-       - command to open shell in Docker
+       - open shell in Docker 
+       - cd jacdac-docs
        - yarn develop (need to wait a bit until tty output stops)
        - navigate to http://localhost:8000/
        - see the same as before in (3)
@@ -104,20 +107,21 @@ The "night light" example uses the following hardware components from above:
      - LED ring module
      - slider module
    - attach micro:bit via USB cable to computer
-   - copy **ARTIFACT/binary.hex** to micro:bit drive
+   - copy **artifact/jacdacnitelite.hex** to micro:bit drive
+  
    - experiment as in paper
       - turn accelerometer face down to active night light logic (check mark on 5x5)
       - put light sensor in fist and hold tightly
       - see how slider affects brightness of LED ring
-   - OPTIONAL build "night light" program from sources using MakeCode CLI
+   - OPTIONAL build "night light" program from sources using MakeCode CLI (see DockerImage, lines TODO)
    - OPTIONAL (Figure 3) load the project into https://makecode.microbit.org/ as follows
       - go to https://makecode.microbit.org/
       - press "Import" button on right side of home screen
       - select "Import URL" option and enter https://github.com/tballmsft/jacdacnitelite
 
 ## 4. Inspect .tex for Tables 1 and 2 generate automatically by analysis of firmware object files.
-   - The artifacts are available XYZ.
-   - OPTIONAL: build firmware from sources and run scripts
+   - The generated tables are at **artifacts/firmware-sizes.txt**  
+   - OPTIONAL: build firmware from sources and run scripts (see DockerImage, lines TODO)
 
 
 ## 5. OPTIONAL: inspect sources of various Figures in paper
