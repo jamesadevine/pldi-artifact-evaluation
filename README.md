@@ -57,13 +57,13 @@ We have flashed the micro:bit you have received with the "microbit-jukebox" app,
 The evaluation consists of five parts:
    1. Work with pre-programmed micro:bit and Jacdac hardware
    2. Work with the Jacdac web site
-   3. Deploy and work with "nite lite" exampe from paper (HW and SW)
+   3. Deploy and work with "night light" exampe from paper (HW and SW)
    4. Check the automatically generate stats that go into Table 1 and 2.
    5. OPTIONAL: examine full sources of various figures in the table
 
 For all parts above, there are optional steps to repeat the steps to build artifacts from sources, if desired. 
 
-The "nite lite" example uses the following hardware components from above:
+The "night light" example uses the following hardware components from above:
  - micro:bit V2
  - Jacdaptor
  - battery pack (optional, as power can be supplied over USB as well)
@@ -97,7 +97,7 @@ The "nite lite" example uses the following hardware components from above:
        - navigate to http://localhost:8000/
        - see the same as before in (3)
     
-## 3. Deploy and work with the "nite lite" example
+## 3. Deploy and work with the "night light" example
    - Configure the hardware as shown in Figure 1(b); note that the order of the four modules is not important:
      - accelerometer module
      - light level module
@@ -106,10 +106,10 @@ The "nite lite" example uses the following hardware components from above:
    - attach micro:bit via USB cable to computer
    - copy **ARTIFACT/binary.hex** to micro:bit drive
    - experiment as in paper
-      - turn accelerometer face down to active nite lite logic (check mark on 5x5)
+      - turn accelerometer face down to active night light logic (check mark on 5x5)
       - put light sensor in fist and hold tightly
       - see how slider affects brightness of LED ring
-   - OPTIONAL build "nite lite" program from sources using MakeCode CLI
+   - OPTIONAL build "night light" program from sources using MakeCode CLI
    - OPTIONAL (Figure 3) load the project into https://makecode.microbit.org/ as follows
       - go to https://makecode.microbit.org/
       - press "Import" button on right side of home screen
