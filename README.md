@@ -1,27 +1,32 @@
 # Docker Image and Dockerfile
 
-A Docker image and DockerFile are provided, which automate the steps of building the artifacts mentioned below. To make most efficient use of time, we suggest using the artifacts that were automatically built from the sources (both included in the Docker image). Of course, the evaluators may want to do some of the steps themselves, which is possible.
+A Docker image and DockerFile are provided, which automate the steps of building the artifacts mentioned below. To make most efficient use of time, we suggest using the artifacts that were automatically built from the sources (both artifacts and sources included in the Docker image). Of course, the evaluators may want to build from sources themselves.
 
- (docker operations may require sudo on linux)
+## Docker operations 
 
- ctrl + d to exit
+- may require sudo on linux
+- ctrl + d to exit
 
-`docker build -t pldi_ae_container .`
+```
+docker build -t pldi_ae_container .
 
-`docker run -id --name=pldi-ae -t pldi_container:latest`
+docker run -id --name=pldi-ae -t pldi_container:latest
 
-`docker cp pldi-ae:/artifacts ./artifacts`
+docker cp pldi-ae:/artifacts ./artifacts
 
-`docker exec -it pldi-ae bash`
+docker exec -it pldi-ae bash
+```
 
-cleanup:
+## Docker cleanup:
 
-`docker stop pldi-ae`
-`docker rm pldi-ae`
+```
+docker stop pldi-ae
+docker rm pldi-ae
+```
 
 # Getting Started Guide
 
-This evaluation is unusual for PLDI as it involves new hardware (now commercially available) for creating embedded/embeddable systems using a plug-and-play design.
+This evaluation is unusual for PLDI as it involves [Jacdac](https://aka.ms/jacdac) hardware (now commercially available) for creating embedded/embeddable systems using a plug-and-play design.
 
 ## Jacdac hardware (supplied)
 
@@ -50,10 +55,11 @@ We have flashed the micro:bit you have received with the "microbit-jukebox" app,
 ## Evaluation overview
 
 The evaluation consists of four parts:
-   1. Work with pre-programmed Jacdac hardware
-   2. Work with Jacdac web site and dashboard
-   3. Work with running example "nite lite" from paper (HW and SW)
+   1. Work with pre-programmed micro:bit and Jacdac hardware
+   2. Work with the Jacdac web site
+   3. Deploy and work with "nite lite" exampe from paper (HW and SW)
    4. Check the automatically generate stats that go into Table 1 and 2.
+   5. OPTIONAL: examine full sources of various figures in the table
 
 For all four parts above, there are optional steps to repeat the steps to build artifacts from sources, if desired. The "nite lite" example uses the following hardware components from above:
  - micro:bit V2
@@ -66,7 +72,7 @@ For all four parts above, there are optional steps to repeat the steps to build 
 
 # Step-by-Step Instructions
 
-## 1. Experiment with the pre-loaded microbit-jukebox hex file to see plug-and-play in action
+## 1. Work with the pre-programmed micro:bit and Jacdac hardware
    - Power micro:bit via battery pack, plugged into JST port on the micro:bit
    - Plug the micro:bit into jacdac adaptor, make sure the small switch in the middle of the jacdac adaptor is in jacdac (lower) position, providing power to Jacdac bus from micro:bit
    - Attach keycap button module via cable to adaptor, see count go up, micro:bit screen react
@@ -77,7 +83,8 @@ For all four parts above, there are optional steps to repeat the steps to build 
    - OPTIONAL: Build the microbit-jukebox app from sources using the MakeCode CLI and copy over USB to micro:bit. 
       - The built app is already available in **artifacts/XYZ**
 
-## 2. Work with the Jacdac web site at https://aka.ms/jacdac
+## 2. Work with the Jacdac web site
+   - Open https://aka.ms/jacdac
    - attach micro:bit to computer via USB
    - press the connect button in the Jacdac web site (and see the various modules displayed in the dashboard)
    - see that changes to hardware state are reflected in the digital twins
@@ -88,21 +95,20 @@ For all four parts above, there are optional steps to repeat the steps to build 
        - navigate to http://localhost:8000/
        - see the same as before in (3)
     
-## 3. Deploy and run the "nite lite" example from the paper
-   - Configure the hardware as shown in Figure 1(b); note that the order of the four modules is not important
-     - accelerometer
-     - light level sensor
-     - LED ring
-     - slider. 
+## 3. Deploy and work with the "nite lite" example
+   - Configure the hardware as shown in Figure 1(b); note that the order of the four modules is not important:
+     - accelerometer module
+     - light level module
+     - LED ring module
+     - slider module
    - attach micro:bit via USB cable to computer
    - copy **ARTIFACT/binary.hex** to micro:bit drive
    - experiment as in paper
       - turn accelerometer face down to active nite lite logic (check mark on 5x5)
       - put light sensor in fist and hold tightly
       - see how slider affects brightness of LED ring
-      - try changing color of ring with modification to code (repeat makecode build and copy steps)
    - OPTIONAL build "nite lite" program from sources using MakeCode CLI
-   - OPTIONAL load the project into https://makecode.microbit.org/ as follows
+   - OPTIONAL (Figure 3) load the project into https://makecode.microbit.org/ as follows
       - go to https://makecode.microbit.org/
       - press "Import" button on right side of home screen
       - select "Import URL" option and enter https://github.com/tballmsft/jacdacnitelite
@@ -110,3 +116,7 @@ For all four parts above, there are optional steps to repeat the steps to build 
 ## 4. Inspect .tex for Tables 1 and 2 generate automatically by analysis of firmware object files.
    - The artifacts are available XYZ.
    - OPTIONAL: build firmware from sources and run scripts
+
+
+## 5. OPTIONAL: inspect sources of various Figures in paper
+   - Figure 
