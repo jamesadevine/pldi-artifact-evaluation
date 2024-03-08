@@ -3,7 +3,7 @@ RUN apt update
 
 ENV TZ=Europe
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-RUN apt install -y git wget curl build-essential libdbus-glib-1-dev libgirepository1.0-dev cmake udev net-tools python2
+RUN apt install -y git wget curl build-essential libdbus-glib-1-dev libgirepository1.0-dev cmake udev net-tools
 
 ADD scripts/install-gcc-arm-none-eabi.sh /install-gcc-arm-none-eabi.sh
 RUN chmod u+x /install-gcc-arm-none-eabi.sh
