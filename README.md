@@ -90,6 +90,10 @@ There are optional steps to repeat the steps to build artifacts from sources.
    - see that changes to hardware state are reflected in the digital twins
    - open device tree view (from wrench on upper left) and inspect devices and services on the Jacdac bus
 
+   - OPTIONAL: building Jacdac web site from sources
+     - See https://github.com/microsoft/jacdac-docs
+     - We found too many issues in getting web site to run under Docker
+
 ## 3. Deploy and work with the "night light" example
    - The "night light" example uses the following hardware components:
       - micro:bit V2
