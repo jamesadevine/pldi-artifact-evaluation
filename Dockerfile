@@ -30,7 +30,7 @@ RUN mkdir /artifacts
 RUN cd /pxt-jacdac/tools/microbit-jukebox && makecode build
 RUN cp /pxt-jacdac/tools/microbit-jukebox/built/binary.hex /artifacts/microbit-jukebox.hex
 RUN cd /jacdacnitelite && makecode build
-RUN cp /jacdacnitelite/built/binary.hex /artifacts/jacdacnitelite.hex
+RUN cp /jacdacnitelite/built/binary.hex /artifacts/nightlight.hex
 RUN cd /jacdac-msr-modules && make drop
 RUN cd /jacdac-msr-modules && ./pldi24.sh >> /artifacts/firmware-sizes.txt
 
