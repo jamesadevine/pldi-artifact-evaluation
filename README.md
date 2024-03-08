@@ -96,9 +96,16 @@ The "night light" example uses the following hardware components from above:
    -  OPTIONAL: Build the Jacdac web site from sources and host locally
        - open shell in Docker 
        - cd jacdac-docs
-       - yarn develop (need to wait a bit until tty output stops)
+       - yarn develop
+       - wait until you see
+            > [watch*docs]   commons (17.9 MiB)
+            
+            > [watch*docs]       framework.js
+            
+            > [watch*docs]       commons.css
+            
+            > [watch*docs]       commons.js
        - navigate to http://localhost:8000/
-       - see the same as before in (3)
 
 ## 3. Deploy and work with the "night light" example
    - Configure the hardware as shown in Figure 1(b); note that the order of the four modules is not important:
@@ -136,3 +143,14 @@ The "night light" example uses the following hardware components from above:
       - https://github.com/microsoft/jacdac/blob/main/services/led.md
    - Figure 8
       - https://github.com/microsoft/jacdac-c/blob/main/inc/jd_physical.h
+   - Figure 9
+      - https://github.com/microsoft/jacdac/blob/main/services/humidity.md
+      - https://github.com/microsoft/jacdac-c/blob/main/services/humidity.c
+   - Figure 10
+      - https://github.com/microsoft/jacdac-c/blob/main/drivers/shtc3.c
+      - https://github.com/microsoft/jacdac-c/blob/main/services/interfaces/jd_sensor_api.h
+      - https://github.com/microsoft/jacdac-msr-modules/blob/main/targets/jm-v3.3/profile/env3.c
+
+
+
+      
