@@ -12,7 +12,7 @@ docker build -t pldi_ae_container .
 
 docker run -id --name=pldi-ae -t pldi_ae_container:latest
 
-docker cp pldi-ae:/artifacts ./artifacts
+docker cp pldi-ae:/home/reviewer/artifacts ./artifacts
 
 docker exec -it pldi-ae bash
 ```
@@ -85,7 +85,7 @@ The "night light" example uses the following hardware components from above:
    - OPTIONAL: Build the microbit-jukebox app from sources using the MakeCode CLI and copy over USB to micro:bit.
       - The built app (hex file to be copied to micro:bit) is available in **artifacts/microbit-jukebox.hex**
       - to build yourself, see DockerImage, lines TODO
-   
+
 
 ## 2. Work with the Jacdac web site
    - Open https://aka.ms/jacdac
@@ -94,16 +94,16 @@ The "night light" example uses the following hardware components from above:
    - see that changes to hardware state are reflected in the digital twins
    - open device tree view (from wrench on upper left) and inspect devices and services on the Jacdac bus
    -  OPTIONAL: Build the Jacdac web site from sources and host locally
-       - open shell in Docker 
+       - open shell in Docker
        - cd jacdac-docs
        - yarn develop
        - wait until you see
             > [watch*docs]   commons (17.9 MiB)
-            
+
             > [watch*docs]       framework.js
-            
+
             > [watch*docs]       commons.css
-            
+
             > [watch*docs]       commons.js
        - navigate to http://localhost:8000/
 
@@ -115,7 +115,7 @@ The "night light" example uses the following hardware components from above:
      - slider module
    - attach micro:bit via USB cable to computer
    - copy **artifact/nightlight.hex** to micro:bit drive
-  
+
    - experiment as in paper
       - turn accelerometer face down to active night light logic (check mark on 5x5)
       - put light sensor in fist and hold tightly
@@ -127,7 +127,7 @@ The "night light" example uses the following hardware components from above:
       - select "Import URL" option and enter https://github.com/tballmsft/jacdacnitelite
 
 ## 4. Inspect .tex for Tables 1 and 2 generate automatically by analysis of firmware object files.
-   - The generated tables are at **artifacts/firmware-sizes.txt**  
+   - The generated tables are at **artifacts/firmware-sizes.txt**
    - OPTIONAL: build firmware from sources and run scripts (see DockerImage, lines TODO)
 
 
@@ -153,4 +153,3 @@ The "night light" example uses the following hardware components from above:
 
 
 
-      
