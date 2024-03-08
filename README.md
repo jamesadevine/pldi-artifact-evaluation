@@ -93,19 +93,6 @@ The "night light" example uses the following hardware components from above:
    - press the connect button in the Jacdac web site (and see the various modules displayed in the dashboard)
    - see that changes to hardware state are reflected in the digital twins
    - open device tree view (from wrench on upper left) and inspect devices and services on the Jacdac bus
-   -  OPTIONAL: Build the Jacdac web site from sources and host locally
-       - open shell in Docker 
-       - cd jacdac-docs
-       - yarn develop
-       - wait until you see
-            > [watch*docs]   commons (17.9 MiB)
-            
-            > [watch*docs]       framework.js
-            
-            > [watch*docs]       commons.css
-            
-            > [watch*docs]       commons.js
-       - navigate to http://localhost:8000/
 
 ## 3. Deploy and work with the "night light" example
    - Configure the hardware as shown in Figure 1(b); note that the order of the four modules is not important:
