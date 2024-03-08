@@ -4,8 +4,6 @@ RUN apt update
 ENV TZ=Europe
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt install -y git wget curl build-essential libdbus-glib-1-dev libgirepository1.0-dev cmake udev net-tools python2
-RUN apt-get install -y chromium-browser
-RUN apt-get install -y libx11-xcb1 libxcomposite1 libasound2 libatk1.0-0 libatk-bridge2.0-0 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgbm1 libgcc1 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 
 
 ADD scripts/install-gcc-arm-none-eabi.sh /install-gcc-arm-none-eabi.sh
 RUN chmod u+x /install-gcc-arm-none-eabi.sh
@@ -22,8 +20,6 @@ RUN node --version
 RUN npm --version
 RUN npm install -g yarn makecode
 RUN git clone https://github.com/microsoft/pxt-jacdac --branch v1.9.25 --recursive
-RUN git clone https://github.com/microsoft/jacdac-docs --branch pldi24 --recursive
-RUN cd /jacdac-docs && yarn install --frozen-lockfile
 RUN git clone https://github.com/tballmsft/jacdacnitelite --branch pldi24 --recursive
 RUN git clone https://github.com/microsoft/jacdac-msr-modules --branch pldi24 --recursive
 RUN mkdir /artifacts
