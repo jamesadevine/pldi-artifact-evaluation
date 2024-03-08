@@ -61,16 +61,7 @@ The evaluation consists of five parts:
    4. Check the automatically generate stats that go into Table 1 and 2.
    5. OPTIONAL: examine full sources of various figures in the table
 
-For all parts above, there are optional steps to repeat the steps to build artifacts from sources, if desired.
-
-The "night light" example uses the following hardware components from above:
- - micro:bit V2
- - Jacdaptor
- - battery pack (optional, as power can be supplied over USB as well)
- - slider module
- - light sensor module
- - accelerometer module
- - LED ring module
+There are optional steps to repeat the steps to build artifacts from sources.
 
 # Step-by-Step Instructions
 
@@ -83,9 +74,14 @@ The "night light" example uses the following hardware components from above:
    - Try removing something from Jacdac bus, see count go down
    - See https://microsoft.github.io/jacdac-docs/start/ for videos and more information about the microbit-jukebox app.
    - OPTIONAL: Build the microbit-jukebox app from sources using the MakeCode CLI and copy over USB to micro:bit.
-      - The built app (hex file to be copied to micro:bit) is available in **artifacts/microbit-jukebox.hex**
-      - to build yourself, see DockerImage, lines TODO
-   
+      - The built app (hex file to be copied to micro:bit) already is available in **artifacts/microbit-jukebox.hex**
+      - to build yourself:
+         - docker exec -it pldi-ae bash
+         - cd /pxt-jacdac/tools/microbit-jukebox && makecode build
+         - cp /pxt-jacdac/tools/microbit-jukebox/built/binary.hex /artifacts/microbit-jukebox.hex
+         - exit docker
+         - docker cp pldi-ae:/artifacts ./artifacts
+         - copy artifacts/microbit-jukebox.hex to micro:bit drive (plugged into computer via USB cable) 
 
 ## 2. Work with the Jacdac web site
    - Open https://aka.ms/jacdac
@@ -95,6 +91,14 @@ The "night light" example uses the following hardware components from above:
    - open device tree view (from wrench on upper left) and inspect devices and services on the Jacdac bus
 
 ## 3. Deploy and work with the "night light" example
+   - The "night light" example uses the following hardware components:
+      - micro:bit V2
+      - Jacdaptor
+      - battery pack (optional, as power can be supplied over USB as well)
+      - slider module
+      - light sensor module
+      - accelerometer module
+      - LED ring module
    - Configure the hardware as shown in Figure 1(b); note that the order of the four modules is not important:
      - accelerometer module
      - light level module
@@ -102,12 +106,19 @@ The "night light" example uses the following hardware components from above:
      - slider module
    - attach micro:bit via USB cable to computer
    - copy **artifact/nightlight.hex** to micro:bit drive
-  
    - experiment as in paper
       - turn accelerometer face down to active night light logic (check mark on 5x5)
       - put light sensor in fist and hold tightly
       - see how slider affects brightness of LED ring
-   - OPTIONAL build "night light" program from sources using MakeCode CLI (see DockerImage, lines TODO)
+
+   - OPTIONAL build "night light" program from sources using MakeCode CLI
+      - docker exec -it pldi-ae bash
+      - cd /jacdacnitelite && makecode build
+      - cp /jacdacnitelite/built/binary.hex /artifacts/nightlight.hex
+      - exit docker
+      - docker cp pldi-ae:/artifacts ./artifacts
+      - copy artifacts/nightlight.hex to micro:bit drive (plugged into computer via USB cable) 
+
    - OPTIONAL (Figure 3) load the project into https://makecode.microbit.org/ as follows
       - go to https://makecode.microbit.org/
       - press "Import" button on right side of home screen
@@ -115,8 +126,10 @@ The "night light" example uses the following hardware components from above:
 
 ## 4. Inspect .tex for Tables 1 and 2 generate automatically by analysis of firmware object files.
    - The generated tables are at **artifacts/firmware-sizes.txt**  
-   - OPTIONAL: build firmware from sources and run scripts (see DockerImage, lines TODO)
-
+   - OPTIONAL: build firmware from sources and run scripts
+     - docker exec -it pldi-ae bash
+     - cd /jacdac-msr-modules && make clean && make drop
+     - cd /jacdac-msr-modules && ./pldi24.sh >> /artifacts/firmware-sizes.txt
 
 ## 5. OPTIONAL: inspect sources of various Figures in paper
    - Figure 2
