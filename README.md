@@ -114,7 +114,7 @@ The "night light" example uses the following hardware components from above:
      - LED ring module
      - slider module
    - attach micro:bit via USB cable to computer
-   - copy **artifact/jacdacnitelite.hex** to micro:bit drive
+   - copy **artifact/nightlight.hex** to micro:bit drive
   
    - experiment as in paper
       - turn accelerometer face down to active night light logic (check mark on 5x5)
