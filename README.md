@@ -52,6 +52,8 @@ You should have received the following hardware to perform the evaluation:
 
 We have flashed the micro:bit you have received with the "microbit-jukebox" app, a MakeCode application that demonstrates the plug-and-play capability of Jacdac; we will give instructions on how to build the application yourself as well.
 
+NOTE: Figure 1(a) of the paper shows some Jacdac modules that are in Kit B from KittenBot (https://www.kittenbot.cc/products/jacdac-kit-b-elite-module-suite-redefining-electronic-interfacing), which we did not include in the hardware above. We included the hardware needed for the running example ``night light'' featured in the paper.
+
 ## Evaluation overview
 
 The evaluation consists of five parts:
@@ -92,7 +94,7 @@ There are optional steps to repeat the steps to build artifacts from sources.
 
    - OPTIONAL: building Jacdac web site from sources
      - See https://github.com/microsoft/jacdac-docs
-     - We found too many issues in getting web site to run under Docker
+     - We found too many issues in getting the web site to run under Docker
 
 ## 3. Deploy and work with the "night light" example
    - The "night light" example uses the following hardware components:
