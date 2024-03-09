@@ -2,7 +2,7 @@
 
 A Docker image and DockerFile are provided, which automate the steps of building the artifacts mentioned below. To make most efficient use of time, we suggest using the artifacts that were automatically built from the sources (both artifacts and sources included in the Docker image). Of course, the evaluators may want to build from sources themselves.
 
-## Docker operations
+## Building Docker image (optional)
 
 - may require sudo on linux
 - ctrl + d to exit
@@ -13,7 +13,10 @@ docker build -t pldi_ae_container .
 docker run -id --name=pldi-ae -t pldi_ae_container:latest
 
 docker cp pldi-ae:/artifacts ./artifacts
+```
 
+## Running shell in Docker
+```
 docker exec -it pldi-ae bash
 ```
 
