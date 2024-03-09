@@ -132,10 +132,17 @@ There are optional steps to repeat the steps to build artifacts from sources.
 
 ## 4. Inspect .tex for Tables 1 and 2 generate automatically by analysis of firmware object files.
    - The generated tables are at **artifacts/firmware-sizes.txt**  
+
    - OPTIONAL: build firmware from sources and run scripts
      - docker exec -it pldi-ae bash
      - cd /jacdac-msr-modules && make clean && make drop
      - cd /jacdac-msr-modules && ./pldi24.sh >> /artifacts/firmware-sizes.txt
+   
+   - OPTIONAL: to see the size of the object files for the temp/humidity sensor described in Section 5.3.1:
+      - docker exec -it pldi-ae bash
+     - cd /jacdac-msr-modules
+     - make TRG=targets/jm-v4.0/profile/temphum-202.c
+     - make TRG=targets/jm-v4.0/profile/temphum-202.c  st|grep FLASH| sort
 
 ## 5. OPTIONAL: inspect sources of various Figures in paper
    - Figure 2
