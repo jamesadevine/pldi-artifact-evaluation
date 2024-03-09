@@ -150,12 +150,10 @@ There are optional steps to repeat the steps to build artifacts from sources.
    - Figure 8
       - https://github.com/microsoft/jacdac-c/blob/main/inc/jd_physical.h
    - Figure 9
-      - https://github.com/microsoft/jacdac/blob/main/services/humidity.md
-      - https://github.com/microsoft/jacdac-c/blob/main/services/humidity.c
-   - Figure 10
-      - https://github.com/microsoft/jacdac-c/blob/main/drivers/shtc3.c
-      - https://github.com/microsoft/jacdac-c/blob/main/services/interfaces/jd_sensor_api.h
-      - https://github.com/microsoft/jacdac-msr-modules/blob/main/targets/jm-v3.3/profile/env3.c
+      - https://github.com/microsoft/jacdac/blob/main/services/buzzer.md
+      - https://github.com/microsoft/jacdac-c/blob/main/services/buzzer.c
+      - https://github.com/microsoft/jacdac-msr-modules/blob/main/targets/jm-v4.0/profile/buzzer-89.c
+
 
 
 
