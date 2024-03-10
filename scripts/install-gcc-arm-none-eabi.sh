@@ -1,3 +1,5 @@
+set -x
+set -e
 VER=15:10.3-2021.10-9
 URL=https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2
 echo "Creating gcc-arm-none-eabi package version $VER"
@@ -25,7 +27,7 @@ mv gcc-arm-none-eabi-*/* gcc-arm-none-eabi/usr/
 dpkg-deb --build --root-owner-group gcc-arm-none-eabi
 
 echo "Installing..."
-apt install ./gcc-arm-none-eabi.deb -y
+dpkg -i ./gcc-arm-none-eabi.deb
 
 echo "Removing temporary files..."
 rm -r gcc-arm-none-eabi*
