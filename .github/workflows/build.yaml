@@ -16,13 +16,14 @@ jobs:
           push: false
           tags: plda_ae_container:latest
 
-      - name: Extract artifacts
-        run: |
-          docker cp pldi-ae:/artifacts ./artifacts
-
       - name: Save docker image
         run: |
           docker save plda_ae_container:latest | gzip > plda_ae_container.tar.gz
+
+      - name: Extract artifacts
+        run: |
+          id=$(docker create plda_ae_container)
+          docker cp $id:/artifacts ./artifacts
 
       - name: Upload docker image
         uses: actions/upload-artifact@v2
