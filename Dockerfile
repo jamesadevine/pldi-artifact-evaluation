@@ -39,9 +39,6 @@ RUN git clone https://github.com/microsoft/jacdac-msr-modules --branch pldi24 --
 RUN cd /jacdac-msr-modules && make drop
 RUN cd /jacdac-msr-modules && ./pldi24.sh >> /artifacts/firmware-sizes.txt
 
-RUN git clone https://github.com/microsoft/jacdac-docs --branch pldi24 --recursive
-RUN cd jacdac-docs && yarn install --frozen-lockfile --network-timeout 1000000
-
 RUN git clone https://github.com/microsoft/pxt-jacdac --branch v1.9.25 --recursive
 RUN cd /pxt-jacdac/tools/microbit-jukebox && makecode build
 RUN cp /pxt-jacdac/tools/microbit-jukebox/built/binary.hex /artifacts/microbit-jukebox.hex

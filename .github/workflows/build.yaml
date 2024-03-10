@@ -21,19 +21,8 @@ jobs:
         run: |
           docker save pldi_ae_container:latest | gzip > pldi_ae_container.tar.gz
 
-      - name: Extract artifacts
-        run: |
-          id=$(docker create pldi_ae_container)
-          docker cp $id:/artifacts ./artifacts
-
       - name: Upload docker image
         uses: actions/upload-artifact@v2
         with:
           name: pldi_ae_container
           path: pldi_ae_container.tar.gz
-
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: artifacts
-          path: artifacts
