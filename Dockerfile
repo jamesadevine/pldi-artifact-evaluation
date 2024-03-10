@@ -30,7 +30,9 @@ RUN . "$NVM_DIR/nvm.sh" && nvm alias default v${NODE_VERSION}
 ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 RUN node --version
 RUN npm --version
+RUN npm install -g yarn makecode
 
+## with all the dependencies installed, we can now build all the software!
 RUN mkdir /artifacts
 
 RUN git clone https://github.com/microsoft/jacdac-msr-modules --branch pldi24 --recursive
@@ -40,7 +42,6 @@ RUN cd /jacdac-msr-modules && ./pldi24.sh >> /artifacts/firmware-sizes.txt
 RUN git clone https://github.com/microsoft/jacdac-docs --branch pldi24 --recursive
 RUN cd jacdac-docs && yarn install --frozen-lockfile --network-timeout 1000000
 
-RUN npm install -g yarn makecode
 RUN git clone https://github.com/microsoft/pxt-jacdac --branch v1.9.25 --recursive
 RUN cd /pxt-jacdac/tools/microbit-jukebox && makecode build
 RUN cp /pxt-jacdac/tools/microbit-jukebox/built/binary.hex /artifacts/microbit-jukebox.hex
