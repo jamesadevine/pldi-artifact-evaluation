@@ -9,9 +9,7 @@ A Docker image and DockerFile are provided, which automate the steps of building
 
 ```
 docker build -t pldi_ae_container .
-
 docker run -id --name=pldi-ae -t pldi_ae_container:latest
-
 docker cp pldi-ae:/artifacts ./artifacts
 ```
 
@@ -94,7 +92,7 @@ There are optional steps to repeat the steps to build artifacts from sources.
 ## 2. Work with the Jacdac web site
    - Open https://aka.ms/jacdac
    - attach micro:bit to computer via USB
-   - press the connect button in the Jacdac web site (and see the various modules displayed in the dashboard)
+   - press the connect button in the Jacdac web site (and see the various modules connected to the micro:bit (from step 1) displayed in the dashboard)
    - see that changes to hardware state are reflected in the digital twins
    - open device tree view (from wrench on upper left) and inspect devices and services on the Jacdac bus
 
