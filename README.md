@@ -7,11 +7,15 @@ Docker commands:
 - ctrl + d to exit an interactive terminal
 
 ## Loading prebuilt docker image
-1. Load the docker image: `docker load -i ./pldi_ae_container.tar.gz `
+1. Download the prebuilt docker image `pldi_ae_container.tar.gz`
+2. Open a terminal at the location where `pldi_ae_container.tar.gz` was downloaded.
+3. Load the docker image: `docker load -i ./pldi_ae_container.tar.gz `
 
 ## Building Docker image (optional)
 
-1. Build the docker image: `docker build --platform linux/amd64 -t pldi_ae_container .`
+1. Download the dockerfile `Dockerfile`
+2. Open a terminal at the location where `Dockerfile` was downloaded.
+3. Build the docker image: `docker build --platform linux/amd64 -t pldi_ae_container .`
 
 ## Starting the container
 1. Start a container: `docker run --platform linux/amd64 -id --name=pldi-ae -t pldi_ae_container:latest`
