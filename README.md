@@ -1,29 +1,32 @@
 # Docker Image and Dockerfile
 
-A Docker image and DockerFile are provided, which automate the steps of building the artifacts mentioned below. To make most efficient use of time, we suggest using the artifacts that were automatically built from the sources (both artifacts and sources included in the Docker image). Of course, the evaluators may want to build from sources themselves.
+A Docker image and DockerFile are provided, which automate the steps of building the artifacts mentioned below. To make most efficient use of time, we suggest using the artifacts that were automatically built from the sources (both artifacts and sources included in the Docker image). Of course, the evaluators may want to build from sources themselves - a docker file (`./Dockerfile`) and build step are provided in this case.
+
+Docker commands:
+- may require sudo on linux
+- ctrl + d to exit an interactive terminal
+
+## Loading prebuilt docker image
+1. Load the docker image: `docker load -i ./prebuilt/pldi_ae_container.tar.gz `
 
 ## Building Docker image (optional)
 
-- may require sudo on linux
-- ctrl + d to exit
+1. Build the docker image: `docker build --platform linux/amd64 -t pldi_ae_container .`
 
-```
-docker build --platform linux/amd64 -t pldi_ae_container .
-docker run --platform linux/amd64 -id --name=pldi-ae -t pldi_ae_container:latest
-docker cp pldi-ae:/artifacts ./artifacts
-```
+## Starting the container
+1. Start a container: `docker run --platform linux/amd64 -id --name=pldi-ae -t pldi_ae_container:latest`
+
+## Copying prebuilt files from the container
+1. Copy prebuilt files from the container: `docker cp pldi-ae:/artifacts ./artifacts`
 
 ## Running shell in Docker
-```
-docker exec -it pldi-ae bash
-```
+1. Start an interactive session with the docker container: `docker exec -it pldi-ae bash`
 
 ## Docker cleanup:
 
-```
-docker stop pldi-ae
-docker rm pldi-ae
-```
+To purge the docker image if building from scratch or loading in a different version:
+1. Stop the running container: `docker stop pldi-ae`
+2. Remove the image: `docker rm pldi-ae`
 
 # Getting Started Guide
 
