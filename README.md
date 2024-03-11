@@ -7,7 +7,7 @@ Docker commands:
 - ctrl + d to exit an interactive terminal
 
 ## Loading prebuilt docker image
-1. Load the docker image: `docker load -i ./prebuilt/pldi_ae_container.tar.gz `
+1. Load the docker image: `docker load -i ./pldi_ae_container.tar.gz `
 
 ## Building Docker image (optional)
 
