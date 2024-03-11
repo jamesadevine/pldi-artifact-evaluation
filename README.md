@@ -81,12 +81,15 @@ There are optional steps to repeat the steps to build artifacts from sources.
    - OPTIONAL: Build the microbit-jukebox app from sources using the MakeCode CLI and copy over USB to micro:bit.
       - The built app (hex file to be copied to micro:bit) already is available in **artifacts/microbit-jukebox.hex**
       - to build yourself:
-         - docker exec -it pldi-ae bash
-         - cd /pxt-jacdac/tools/microbit-jukebox && makecode build
-         - cp /pxt-jacdac/tools/microbit-jukebox/built/binary.hex /artifacts/microbit-jukebox.hex
-         - exit docker
-         - docker cp pldi-ae:/artifacts ./artifacts
-         - copy artifacts/microbit-jukebox.hex to micro:bit drive (plugged into computer via USB cable) 
+      ``````
+         docker exec -it pldi-ae bash
+         cd /pxt-jacdac/tools/microbit-jukebox && makecode build
+         cp /pxt-jacdac/tools/microbit-jukebox/built/binary.hex /artifacts/microbit-jukebox.hex
+         exit
+         docker cp pldi-ae:/artifacts ./artifacts
+      ``````
+
+      -   copy artifacts/microbit-jukebox.hex to micro:bit drive (plugged into computer via USB cable)
 
 ## 2. Work with the Jacdac web site
    - Open https://aka.ms/jacdac
@@ -121,31 +124,43 @@ There are optional steps to repeat the steps to build artifacts from sources.
       - see how slider affects brightness of LED ring
 
    - OPTIONAL build "night light" program from sources using MakeCode CLI
-      - docker exec -it pldi-ae bash
-      - cd /jacdacnitelite && makecode build
-      - cp /jacdacnitelite/built/binary.hex /artifacts/nightlight.hex
-      - exit docker
-      - docker cp pldi-ae:/artifacts ./artifacts
+
+   ``````
+      docker exec -it pldi-ae bash
+      cd /jacdacnitelite && makecode build
+      cp /jacdacnitelite/built/binary.hex /artifacts/nightlight.hex
+      exit docker
+      docker cp pldi-ae:/artifacts ./artifacts
+   ``````
+   
       - copy artifacts/nightlight.hex to micro:bit drive (plugged into computer via USB cable) 
 
    - OPTIONAL (Figure 3) load the project into https://makecode.microbit.org/ as follows
       - go to https://makecode.microbit.org/
       - press "Import" button on right side of home screen
       - select "Import URL" option and enter https://github.com/tballmsft/jacdacnitelite
+      - connect micro:bit to computer via USB cable
+      - click ... next to Download button in lower-left of MakeCode and connect MakeCode to the micro:bit via WebUSB
+      - reset the micro:bit (press button on back)
+      - see device twins for connected modules (as in dashboard)
 
 ## 4. Inspect .tex for Tables 1 and 2 generate automatically by analysis of firmware object files.
    - The generated tables are at **artifacts/firmware-sizes.txt**  
 
    - OPTIONAL: build firmware from sources and run scripts
-     - docker exec -it pldi-ae bash
-     - cd /jacdac-msr-modules && make clean && make drop
-     - cd /jacdac-msr-modules && ./pldi24.sh >> /artifacts/firmware-sizes.txt
-   
+     ``````
+      docker exec -it pldi-ae bash
+      cd /jacdac-msr-modules && make clean && make drop
+      cd /jacdac-msr-modules && ./pldi24.sh >> /artifacts/firmware-sizes.txt
+      ``````
+
    - OPTIONAL: to see the size of the object files for the temp/humidity sensor described in Section 5.3.1:
-      - docker exec -it pldi-ae bash
-     - cd /jacdac-msr-modules
-     - make TRG=targets/jm-v4.0/profile/temphum-202.c
-     - make TRG=targets/jm-v4.0/profile/temphum-202.c  st|grep FLASH| sort
+      ``````
+      docker exec -it pldi-ae bash
+      cd /jacdac-msr-modules
+      make TRG=targets/jm-v4.0/profile/temphum-202.c
+      make TRG=targets/jm-v4.0/profile/temphum-202.c  st|grep FLASH| sort
+      ``````
 
 ## 5. OPTIONAL: inspect sources of various Figures in paper
    - Figure 2
