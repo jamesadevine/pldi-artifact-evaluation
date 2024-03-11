@@ -8,8 +8,8 @@ A Docker image and DockerFile are provided, which automate the steps of building
 - ctrl + d to exit
 
 ```
-docker build -t pldi_ae_container .
-docker run -id --name=pldi-ae -t pldi_ae_container:latest
+docker build --platform linux/amd64 -t pldi_ae_container .
+docker run --platform linux/amd64 -id --name=pldi-ae -t pldi_ae_container:latest
 docker cp pldi-ae:/artifacts ./artifacts
 ```
 
@@ -130,8 +130,8 @@ There are optional steps to repeat the steps to build artifacts from sources.
       exit docker
       docker cp pldi-ae:/artifacts ./artifacts
    ``````
-   
-      - copy artifacts/nightlight.hex to micro:bit drive (plugged into computer via USB cable) 
+
+      - copy artifacts/nightlight.hex to micro:bit drive (plugged into computer via USB cable)
 
    - OPTIONAL (Figure 3) load the project into https://makecode.microbit.org/ as follows
       - go to https://makecode.microbit.org/
@@ -143,7 +143,7 @@ There are optional steps to repeat the steps to build artifacts from sources.
       - see device twins for connected modules (as in dashboard)
 
 ## 4. Inspect .tex for Tables 1 and 2 generate automatically by analysis of firmware object files.
-   - The generated tables are at **artifacts/firmware-sizes.txt**  
+   - The generated tables are at **artifacts/firmware-sizes.txt**
 
    - OPTIONAL: build firmware from sources and run scripts
      ``````
@@ -180,4 +180,3 @@ There are optional steps to repeat the steps to build artifacts from sources.
 
 
 
-      
