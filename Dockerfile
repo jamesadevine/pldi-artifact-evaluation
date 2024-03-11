@@ -6,7 +6,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt install -y git wget curl build-essential libdbus-glib-1-dev libgirepository1.0-dev cmake udev net-tools
 
 ## install the version of GCC used to build the jacdac firmware
-ADD scripts/install-gcc-arm-none-eabi.sh /install-gcc-arm-none-eabi.sh
+ADD install-gcc-arm-none-eabi.sh /install-gcc-arm-none-eabi.sh
 RUN chmod u+x /install-gcc-arm-none-eabi.sh
 RUN /install-gcc-arm-none-eabi.sh
 RUN arm-none-eabi-gcc --version
