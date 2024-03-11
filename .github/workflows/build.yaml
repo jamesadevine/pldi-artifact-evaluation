@@ -16,6 +16,7 @@ jobs:
           push: false
           tags: pldi_ae_container:latest
           load: true
+          platforms: linux/amd64
 
       - name: Save docker image
         run: |
