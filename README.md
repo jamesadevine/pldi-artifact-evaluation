@@ -68,7 +68,7 @@ The evaluation consists of five parts:
    1. Work with pre-programmed micro:bit and Jacdac hardware
    2. Work with the Jacdac web site
    3. Deploy and work with "night light" exampe from paper (HW and SW)
-   4. Check the automatically generate stats that go into Table 1 and 2.
+   4. Check the automatically generate stats that go into Table 2 and 3.
    5. OPTIONAL: examine full sources of various figures in the table
 
 There are optional steps to repeat the steps to build artifacts from sources.
@@ -97,6 +97,9 @@ There are optional steps to repeat the steps to build artifacts from sources.
       -   copy artifacts/microbit-jukebox.hex to micro:bit drive (plugged into computer via USB cable)
 
 ## 2. Work with the Jacdac web site
+   - **Make sure to use a browser that supports WebUSB on your OS.** Combinations we have tested:
+      - Chrome on Windows/MacOs
+      - Edge on Windows
    - Open https://aka.ms/jacdac
    - attach micro:bit to computer via USB
    - press the connect button in the Jacdac web site (and see the various modules connected to the micro:bit (from step 1) displayed in the dashboard)
@@ -149,7 +152,7 @@ There are optional steps to repeat the steps to build artifacts from sources.
       - reset the micro:bit (press button on back)
       - see device twins for connected modules (as in dashboard)
 
-## 4. Inspect .tex for Tables 1 and 2 generate automatically by analysis of firmware object files.
+## 4. Inspect .tex for Tables 2 and 3 generate automatically by analysis of firmware object files.
    - The generated tables are at **artifacts/firmware-sizes.txt**
 
    - OPTIONAL: build firmware from sources and run scripts
