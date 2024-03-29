@@ -76,7 +76,7 @@ There are optional steps to repeat the steps to build artifacts from sources.
 # Step-by-Step Instructions
 
 ## 1. Work with the pre-programmed micro:bit and Jacdac hardware
-   - Power micro:bit via battery pack, plugged into JST port on the micro:bit
+   - Power micro:bit via battery pack, plugged into JST port on the micro:bit (it is the beige-colored plastic sqaure in the upper-right corner as you are looking at the back of the micro:bit)
    - Plug the micro:bit into jacdac adaptor, make sure the small switch in the middle of the jacdac adaptor is in jacdac (lower) position, providing power to Jacdac bus from micro:bit
    - Attach keycap button module via cable to adaptor, see count go up, micro:bit screen react
    - Try another button
@@ -89,7 +89,7 @@ There are optional steps to repeat the steps to build artifacts from sources.
       ``````
          docker exec -it pldi-ae bash
          cd /pxt-jacdac/tools/microbit-jukebox && makecode build
-         cp /pxt-jacdac/tools/microbit-jukebox/built/binary.hex /artifacts/microbit-jukebox.hex
+         cp built/binary.hex /artifacts/microbit-jukebox.hex
          exit
          docker cp pldi-ae:/artifacts ./artifacts
       ``````
@@ -136,7 +136,7 @@ There are optional steps to repeat the steps to build artifacts from sources.
    ``````
       docker exec -it pldi-ae bash
       cd /jacdacnitelite && makecode build
-      cp /jacdacnitelite/built/binary.hex /artifacts/nightlight.hex
+      cp built/binary.hex /artifacts/nightlight.hex
       exit docker
       docker cp pldi-ae:/artifacts ./artifacts
    ``````
@@ -158,8 +158,9 @@ There are optional steps to repeat the steps to build artifacts from sources.
    - OPTIONAL: build firmware from sources and run scripts
      ``````
       docker exec -it pldi-ae bash
-      cd /jacdac-msr-modules && make clean && make drop
-      cd /jacdac-msr-modules && ./pldi24.sh >> /artifacts/firmware-sizes.txt
+      cd /jacdac-msr-modules
+      make clean && make drop
+      ./pldi24.sh >> /artifacts/firmware-sizes.txt
       ``````
 
    - OPTIONAL: to see the size of the object files for the temp/humidity sensor described in Section 5.3.1:
