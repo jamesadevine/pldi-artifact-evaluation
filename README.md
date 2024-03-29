@@ -36,9 +36,9 @@ To purge the docker image if building from scratch or loading in a different ver
 
 This evaluation is unusual for PLDI as it involves [Jacdac](https://aka.ms/jacdac) hardware (now commercially available) for creating embedded/embeddable systems using a plug-and-play design.
 
-## Jacdac hardware (supplied)
+## Jacdac hardware
 
-You should have received the following hardware to perform the evaluation:
+You will need the following hardware to perform the evaluation:
 
    1. A micro:bit V2 "Go Bundle" (https://www.sparkfun.com/products/17288) which includes:
       - a micro:bit V2
@@ -56,7 +56,7 @@ You should have received the following hardware to perform the evaluation:
       - 1 LED ring module
       - 1 passive Jacdac hub
 
-   3. a turtle-shaped MSR accelerometer module (https://microsoft.github.io/jacdac-docs/devices/microsoft-research/jmaccelerometer30v10/)
+   3. a Jacdac accelerometer module, available in KittenBot Kit B or this one: https://microsoft.github.io/jacdac-docs/devices/microsoft-research/jmaccelerometer30v10/
 
 We have flashed the micro:bit you have received with the "microbit-jukebox" app, a MakeCode application that demonstrates the plug-and-play capability of Jacdac; we will give instructions on how to build the application yourself as well.
 
