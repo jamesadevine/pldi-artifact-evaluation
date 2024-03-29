@@ -34,6 +34,6 @@ RUN git clone https://github.com/microsoft/pxt-jacdac --branch v1.9.25 --recursi
 RUN cd /pxt-jacdac/tools/microbit-jukebox && makecode build
 RUN cp /pxt-jacdac/tools/microbit-jukebox/built/binary.hex /artifacts/microbit-jukebox.hex
 
-RUN git clone https://github.com/tballmsft/jacdacnitelite --branch pldi24 --recursive
+RUN git clone https://github.com/tballmsft/jacdacnitelite --branch pldi24_updated --recursive
 RUN cd /jacdacnitelite && makecode build
 RUN cp /jacdacnitelite/built/binary.hex /artifacts/nightlight.hex
